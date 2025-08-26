@@ -1,0 +1,45 @@
+# Ignore everything by default
+*
+
+# But track the experiments directory
+!/experiments/
+
+# Ignore all Markdown files
+*.md
+
+# Keep the .gitignore file itself
+!.gitignore
+
+# Ignore IDE specific files in all directories
+**/.vscode/
+**/.idea/
+**/*.sublime-workspace
+**/*.sublime-project
+
+# Ignore compiled files in all directories
+**/*.bin
+**/*.hex
+**/*.elf
+**/*.o
+**/*.d
+**/*.lst
+**/*.lss
+**/*.sym
+**/*.lpp
+**/*.srec
+**/*.map
+**/*.eep
+
+# Ignore debug files
+**/*.dSYM/
+**/*.su
+**/*.idb
+**/*.pdb
+
+# Ignore OS generated files
+**/.DS_Store
+**/._*
+**/.Spotlight-V100
+**/.Trashes
+**/ehthumbs.db
+**/Thumbs.db
