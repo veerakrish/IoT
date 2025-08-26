@@ -57,6 +57,54 @@ Welcome to the IoT Lab repository! This repository contains a collection of hand
 
 Contributions are welcome! Please feel free to submit a Pull Request.
 
+## Setting Up MQTT Broker on Render.com
+
+For experiments involving MQTT (like Experiment 7), you'll need to set up your own MQTT broker. Here's how to deploy one for free on Render.com:
+
+1. **Create a new Web Service**
+   - Go to [Render.com](https://render.com) and sign up/log in
+   - Click "New" and select "Web Service"
+   - Connect your GitHub repository or use the provided Docker configuration
+
+2. **Configure the Service**
+   - Service Name: `your-mqtt-broker`
+   - Region: Choose the one closest to you
+   - Branch: `main` or your working branch
+   - Runtime: Docker
+
+3. **Docker Configuration**
+   Create a `Dockerfile` in your project root:
+   ```dockerfile
+   FROM eclipse-mosquitto:2.0
+   COPY mosquitto.conf /mosquitto/config/mosquitto.conf
+   ```
+
+4. **Create mosquitto.conf**
+   Create a `mosquitto.conf` file:
+   ```
+   listener 1883
+   allow_anonymous true
+   ```
+
+5. **Environment Variables**
+   In Render.com dashboard, add these environment variables:
+   ```
+   PORT=1883
+   ```
+
+6. **Deploy**
+   - Push your changes to GitHub
+   - Render will automatically deploy your MQTT broker
+   - Find your broker URL in the Render dashboard (it will be something like `your-mqtt-broker.onrender.com`)
+
+7. **Testing**
+   Use an MQTT client to test your broker:
+   - Host: `your-mqtt-broker.onrender.com`
+   - Port: `1883`
+   - No username/password needed (for development only)
+
+> **Note:** The free tier has limitations. For production use, consider upgrading or using a dedicated MQTT service.
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
