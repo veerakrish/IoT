@@ -1,4 +1,4 @@
-FROM eclipse-mosquitto:2.0
-COPY mosquitto.conf /mosquitto/config/mosquitto.conf
-RUN chown mosquitto:mosquitto /mosquitto -R
-EXPOSE 1883
+FROM hivemq/hivemq-ce:2023.2
+
+# Enable anonymous access
+RUN echo "mqtt.allow_anonymous=true" >> /opt/hivemq/conf/config.xml
