@@ -12,9 +12,9 @@ Welcome to the IoT Lab repository! This repository contains a collection of hand
 2. **Repository Structure**
    ```
    ├── experiments/
-   │   ├── experiment1/     # Basic LED Blink
-   │   ├── experiment2/     # Digital Input/Output
-   │   ├── experiment3/     # Analog Input/Output
+   │   ├── experiment1/     # Basic Bluetooth Communication between ESP32 and Smart Phone
+   │   ├── experiment2/     # Digital Input/Output Bluetooth Communication between ESP32 and Smart Phone
+   │   ├── experiment3/     # Analog Input/Output 
    │   ├── experiment4/     # PWM and Servo Control
    │   ├── experiment5/     # Sensor Interfacing
    │   ├── experiment6/     # Wireless Communication
